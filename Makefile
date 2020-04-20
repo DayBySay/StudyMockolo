@@ -9,4 +9,5 @@ test:
 		-configuration Debug\
 		-workspace StudyMockolo.xcworkspace\
 		-scheme StudyMockolo\
+		-destination 'platform=iOS Simulator,name=iPhone 11 Pro Max'\
 		clean test
