@@ -22,8 +22,8 @@ class StudyMockoloTests: XCTestCase {
     }
 
     func testViewModelFetchUsers() {
-        let usecaseMock = UsersUseCaseMock()
-        usecaseMock.fetchUsersHandler = {
+        let userRepositoryMock = UserRepositoryMock()
+        userRepositoryMock.fetchUsersHandler = {
             return Observable<[User]>.just([
                 User(identifier: "nyan"),
                 User(identifier: "nyassu"),
@@ -32,14 +32,14 @@ class StudyMockoloTests: XCTestCase {
         }
         let users = scheduler.createObserver([User].self)
         let viewModel = ViewModel(itemSelected: Signal.empty(),
-                                  usersUseCase: usecaseMock)
+                                  usersUseCase: DefaultUsersUseCase(userRepository: userRepositoryMock))
         viewModel.outputs.users
             .drive(users).disposed(by: disposeBag)
         
         scheduler.scheduleAt(10, action: viewModel.inputs.viewDidLoad)
         scheduler.scheduleAt(20, action: viewModel.inputs.viewDidLoad)
         scheduler.scheduleAt(30) {
-            usecaseMock.fetchUsersHandler = {
+            userRepositoryMock.fetchUsersHandler = {
                 return Observable<[User]>.just([
                     User(identifier: "nyan")
                 ])
