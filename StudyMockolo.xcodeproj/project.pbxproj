@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,19 @@
 		19C231C3244D35FC00758996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C1244D35FC00758996 /* Main.storyboard */; };
 		19C231C5244D35FE00758996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C4244D35FE00758996 /* Assets.xcassets */; };
 		19C231C8244D35FE00758996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C6244D35FE00758996 /* LaunchScreen.storyboard */; };
+		19C231D6244D37B100758996 /* StudyMockoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231D5244D37B100758996 /* StudyMockoloTests.swift */; };
 		D9DF4E4FE30A1535073481AC /* Pods_StudyMockolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4095F291D80CD197712EA5B4 /* Pods_StudyMockolo.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19C231D8244D37B100758996 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19C231B0244D35FC00758996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19C231B7244D35FC00758996;
+			remoteInfo = StudyMockolo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		19C231B8244D35FC00758996 /* StudyMockolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyMockolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,6 +36,9 @@
 		19C231C4244D35FE00758996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19C231C7244D35FE00758996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19C231C9244D35FE00758996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C231D3244D37B100758996 /* StudyMockoloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyMockoloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C231D5244D37B100758996 /* StudyMockoloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMockoloTests.swift; sourceTree = "<group>"; };
+		19C231D7244D37B100758996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4095F291D80CD197712EA5B4 /* Pods_StudyMockolo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMockolo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B254C7F64F48292E4B0DCB /* Pods-StudyMockolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMockolo.release.xcconfig"; path = "Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo.release.xcconfig"; sourceTree = "<group>"; };
 		B3C346351847B7A17D5F5CBF /* Pods-StudyMockolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMockolo.debug.xcconfig"; path = "Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +53,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19C231D0244D37B100758996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				19C231BA244D35FC00758996 /* StudyMockolo */,
+				19C231D4244D37B100758996 /* StudyMockoloTests */,
 				19C231B9244D35FC00758996 /* Products */,
 				1BD4F3CF6C966D18FA39A3C4 /* Pods */,
 				EE3AAC8CF6CB84D3B908302C /* Frameworks */,
@@ -56,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				19C231B8244D35FC00758996 /* StudyMockolo.app */,
+				19C231D3244D37B100758996 /* StudyMockoloTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,13 +97,21 @@
 			path = StudyMockolo;
 			sourceTree = "<group>";
 		};
+		19C231D4244D37B100758996 /* StudyMockoloTests */ = {
+			isa = PBXGroup;
+			children = (
+				19C231D5244D37B100758996 /* StudyMockoloTests.swift */,
+				19C231D7244D37B100758996 /* Info.plist */,
+			);
+			path = StudyMockoloTests;
+			sourceTree = "<group>";
+		};
 		1BD4F3CF6C966D18FA39A3C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B3C346351847B7A17D5F5CBF /* Pods-StudyMockolo.debug.xcconfig */,
 				66B254C7F64F48292E4B0DCB /* Pods-StudyMockolo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -114,6 +145,24 @@
 			productReference = 19C231B8244D35FC00758996 /* StudyMockolo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		19C231D2244D37B100758996 /* StudyMockoloTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19C231DC244D37B100758996 /* Build configuration list for PBXNativeTarget "StudyMockoloTests" */;
+			buildPhases = (
+				19C231CF244D37B100758996 /* Sources */,
+				19C231D0244D37B100758996 /* Frameworks */,
+				19C231D1244D37B100758996 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19C231D9244D37B100758996 /* PBXTargetDependency */,
+			);
+			name = StudyMockoloTests;
+			productName = StudyMockoloTests;
+			productReference = 19C231D3244D37B100758996 /* StudyMockoloTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -126,6 +175,10 @@
 				TargetAttributes = {
 					19C231B7244D35FC00758996 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					19C231D2244D37B100758996 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 19C231B7244D35FC00758996;
 					};
 				};
 			};
@@ -143,6 +196,7 @@
 			projectRoot = "";
 			targets = (
 				19C231B7244D35FC00758996 /* StudyMockolo */,
+				19C231D2244D37B100758996 /* StudyMockoloTests */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +209,13 @@
 				19C231C8244D35FE00758996 /* LaunchScreen.storyboard in Resources */,
 				19C231C5244D35FE00758996 /* Assets.xcassets in Resources */,
 				19C231C3244D35FC00758996 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C231D1244D37B100758996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +274,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19C231CF244D37B100758996 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C231D6244D37B100758996 /* StudyMockoloTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19C231D9244D37B100758996 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19C231B7244D35FC00758996 /* StudyMockolo */;
+			targetProxy = 19C231D8244D37B100758996 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		19C231C1244D35FC00758996 /* Main.storyboard */ = {
@@ -387,6 +464,46 @@
 			};
 			name = Release;
 		};
+		19C231DA244D37B100758996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YT838T8CB7;
+				INFOPLIST_FILE = StudyMockoloTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.daybysay.StudyMockoloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StudyMockolo.app/StudyMockolo";
+			};
+			name = Debug;
+		};
+		19C231DB244D37B100758996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YT838T8CB7;
+				INFOPLIST_FILE = StudyMockoloTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.daybysay.StudyMockoloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StudyMockolo.app/StudyMockolo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -404,6 +521,15 @@
 			buildConfigurations = (
 				19C231CD244D35FE00758996 /* Debug */,
 				19C231CE244D35FE00758996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19C231DC244D37B100758996 /* Build configuration list for PBXNativeTarget "StudyMockoloTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C231DA244D37B100758996 /* Debug */,
+				19C231DB244D37B100758996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
