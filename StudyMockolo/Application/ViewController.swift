@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ViewModel(selectedItem: tableView.rx.itemSelected)
+        viewModel = ViewModel(itemSelected: tableView.rx.itemSelected.asSignal())
         viewModel
             .outputs
             .users

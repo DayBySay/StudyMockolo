@@ -35,7 +35,7 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
     var users: Driver<[User]>
     var selectedUser: Signal<User>
     
-    init(selectedItem: ControlEvent<IndexPath>,
+    init(itemSelected: Signal<IndexPath>,
          usersUseCase: UsersUseCase = DefaultUsersUseCase()) {
         self.usersUseCase = usersUseCase
         users = fetchUsers
@@ -43,7 +43,7 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
                 return usersUseCase.fetchUsers().asSignal(onErrorSignalWith: Signal.empty())
             }).asDriver(onErrorDriveWith: Driver.empty())
         
-        selectedUser = selectedItem.asSignal()
+        selectedUser = itemSelected
             .withLatestFrom(users.asSignal(onErrorSignalWith: Signal.empty()), resultSelector: { (indexPath, users) in
                 return users[indexPath.row]
             })
