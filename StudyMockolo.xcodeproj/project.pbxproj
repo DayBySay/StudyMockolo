@@ -14,7 +14,12 @@
 		19C231C5244D35FE00758996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C4244D35FE00758996 /* Assets.xcassets */; };
 		19C231C8244D35FE00758996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C6244D35FE00758996 /* LaunchScreen.storyboard */; };
 		19C231D6244D37B100758996 /* StudyMockoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231D5244D37B100758996 /* StudyMockoloTests.swift */; };
+		19C231DE244D387C00758996 /* Hoge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231DD244D387C00758996 /* Hoge.swift */; };
+		19C231E0244D394000758996 /* OutputMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231DF244D393F00758996 /* OutputMocks.swift */; };
+		19C231E6244D3B9300758996 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231E5244D3B9300758996 /* UserRepository.swift */; };
+		19C231E8244D3BAE00758996 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231E7244D3BAE00758996 /* User.swift */; };
 		D9DF4E4FE30A1535073481AC /* Pods_StudyMockolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4095F291D80CD197712EA5B4 /* Pods_StudyMockolo.framework */; };
+		EBBEB435060417C693FFE069 /* Pods_StudyMockoloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0B61EE04AA716085247280 /* Pods_StudyMockoloTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0B61EE04AA716085247280 /* Pods_StudyMockoloTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMockoloTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C231B8244D35FC00758996 /* StudyMockolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyMockolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C231BB244D35FC00758996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C231BD244D35FC00758996 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,8 +45,14 @@
 		19C231D3244D37B100758996 /* StudyMockoloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyMockoloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C231D5244D37B100758996 /* StudyMockoloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMockoloTests.swift; sourceTree = "<group>"; };
 		19C231D7244D37B100758996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C231DD244D387C00758996 /* Hoge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hoge.swift; sourceTree = "<group>"; };
+		19C231DF244D393F00758996 /* OutputMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputMocks.swift; sourceTree = "<group>"; };
+		19C231E5244D3B9300758996 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		19C231E7244D3BAE00758996 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4095F291D80CD197712EA5B4 /* Pods_StudyMockolo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMockolo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B254C7F64F48292E4B0DCB /* Pods-StudyMockolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMockolo.release.xcconfig"; path = "Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo.release.xcconfig"; sourceTree = "<group>"; };
+		66DF8BF3D737F2274AE81CB8 /* Pods-StudyMockoloTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMockoloTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyMockoloTests/Pods-StudyMockoloTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A92C6E120D212B0DD7147228 /* Pods-StudyMockoloTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMockoloTests.release.xcconfig"; path = "Target Support Files/Pods-StudyMockoloTests/Pods-StudyMockoloTests.release.xcconfig"; sourceTree = "<group>"; };
 		B3C346351847B7A17D5F5CBF /* Pods-StudyMockolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMockolo.debug.xcconfig"; path = "Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBEB435060417C693FFE069 /* Pods_StudyMockoloTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +102,9 @@
 				19C231BB244D35FC00758996 /* AppDelegate.swift */,
 				19C231BD244D35FC00758996 /* SceneDelegate.swift */,
 				19C231BF244D35FC00758996 /* ViewController.swift */,
+				19C231DD244D387C00758996 /* Hoge.swift */,
+				19C231E7244D3BAE00758996 /* User.swift */,
+				19C231E5244D3B9300758996 /* UserRepository.swift */,
 				19C231C1244D35FC00758996 /* Main.storyboard */,
 				19C231C4244D35FE00758996 /* Assets.xcassets */,
 				19C231C6244D35FE00758996 /* LaunchScreen.storyboard */,
@@ -100,6 +116,7 @@
 		19C231D4244D37B100758996 /* StudyMockoloTests */ = {
 			isa = PBXGroup;
 			children = (
+				19C231DF244D393F00758996 /* OutputMocks.swift */,
 				19C231D5244D37B100758996 /* StudyMockoloTests.swift */,
 				19C231D7244D37B100758996 /* Info.plist */,
 			);
@@ -111,6 +128,8 @@
 			children = (
 				B3C346351847B7A17D5F5CBF /* Pods-StudyMockolo.debug.xcconfig */,
 				66B254C7F64F48292E4B0DCB /* Pods-StudyMockolo.release.xcconfig */,
+				66DF8BF3D737F2274AE81CB8 /* Pods-StudyMockoloTests.debug.xcconfig */,
+				A92C6E120D212B0DD7147228 /* Pods-StudyMockoloTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -119,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				4095F291D80CD197712EA5B4 /* Pods_StudyMockolo.framework */,
+				0D0B61EE04AA716085247280 /* Pods_StudyMockoloTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19C231DC244D37B100758996 /* Build configuration list for PBXNativeTarget "StudyMockoloTests" */;
 			buildPhases = (
+				A645561D65FEC8FD24567D8D /* [CP] Check Pods Manifest.lock */,
 				19C231CF244D37B100758996 /* Sources */,
 				19C231D0244D37B100758996 /* Frameworks */,
 				19C231D1244D37B100758996 /* Resources */,
+				F205865BE4C4A8FA8F510655 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +283,45 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A645561D65FEC8FD24567D8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyMockoloTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F205865BE4C4A8FA8F510655 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyMockoloTests/Pods-StudyMockoloTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyMockoloTests/Pods-StudyMockoloTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyMockoloTests/Pods-StudyMockoloTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -268,7 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C231DE244D387C00758996 /* Hoge.swift in Sources */,
 				19C231C0244D35FC00758996 /* ViewController.swift in Sources */,
+				19C231E8244D3BAE00758996 /* User.swift in Sources */,
+				19C231E6244D3B9300758996 /* UserRepository.swift in Sources */,
 				19C231BC244D35FC00758996 /* AppDelegate.swift in Sources */,
 				19C231BE244D35FC00758996 /* SceneDelegate.swift in Sources */,
 			);
@@ -278,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C231E0244D394000758996 /* OutputMocks.swift in Sources */,
 				19C231D6244D37B100758996 /* StudyMockoloTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +531,7 @@
 		};
 		19C231DA244D37B100758996 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66DF8BF3D737F2274AE81CB8 /* Pods-StudyMockoloTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +552,7 @@
 		};
 		19C231DB244D37B100758996 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A92C6E120D212B0DD7147228 /* Pods-StudyMockoloTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
