@@ -1,4 +1,5 @@
 # StudyMockolo
+![StudyMockolo CI](https://github.com/DayBySay/StudyMockolo/workflows/StudyMockolo%20CI/badge.svg)
 
 ## installation
 ```
