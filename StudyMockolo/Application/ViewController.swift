@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ViewModel()
+        viewModel = ViewModel(selectedItem: tableView.rx.itemSelected)
         viewModel.viewDidLoad()
         
         viewModel
@@ -26,26 +26,62 @@ class ViewController: UIViewController {
                 cell.textLabel?.text = element.identifier
         }
         .disposed(by: disposeBag)
+        
+        viewModel
+            .selectedUser
+            .emit(onNext: { (user) in
+                print(user)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
+/// @mockable
 protocol ViewModelType {
     var users: Driver<[User]> { get }
+    var selectedUser: Signal<User> { get }
     func viewDidLoad()
 }
 
 class ViewModel: ViewModelType {
-    private let userRepo: UserRepository
+    private let usersUseCase: UsersUseCase
     
     var users: Driver<[User]> {
-        return userRepo.users
+        return usersUseCase.users
     }
-    
-    init(userRepository: UserRepository = DefaultUserRepository()) {
-        userRepo = userRepository
+    var selectedUser: Signal<User>
+
+    init(selectedItem: ControlEvent<IndexPath>,
+         usersUseCase: UsersUseCase = DefaultUsersUseCase()) {
+        self.usersUseCase = usersUseCase
+        selectedUser = selectedItem.asSignal()
+            .withLatestFrom(usersUseCase.users.asSignal(onErrorSignalWith: Signal.empty()), resultSelector: { (indexPath, users) in
+                return users[indexPath.row]
+            })
     }
     
     func viewDidLoad() {
-        userRepo.fetchUsers()
+        usersUseCase.fetchUsers()
+    }
+}
+
+/// @mockable
+protocol UsersUseCase {
+    var users: Driver<[User]> { get }
+    func fetchUsers()
+}
+
+class DefaultUsersUseCase: UsersUseCase {
+    private let userRepository: UserRepository
+    var users: Driver<[User]> {
+        return userRepository.users
+    }
+    
+    init(userRepository: UserRepository = DefaultUserRepository()) {
+        self.userRepository = userRepository
+    }
+    
+    func fetchUsers() {
+        userRepository.fetchUsers()
     }
 }
