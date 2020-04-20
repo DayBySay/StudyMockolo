@@ -31,8 +31,7 @@ class StudyMockoloTests: XCTestCase {
             ])
         }
         let users = scheduler.createObserver([User].self)
-        let viewModel = ViewModel(itemSelected: Signal.empty(),
-                                  usersUseCase: DefaultUsersUseCase(userRepository: userRepositoryMock))
+        let viewModel = ViewModel(usersUseCase: DefaultUsersUseCase(userRepository: userRepositoryMock))
         viewModel.outputs.users
             .drive(users).disposed(by: disposeBag)
         
@@ -74,19 +73,17 @@ class StudyMockoloTests: XCTestCase {
                 User(identifier: "nyossu"),
             ])
         }
-        let select = PublishRelay<IndexPath>()
         let selectedUser = scheduler.createObserver(User.self)
-        let viewModel = ViewModel(itemSelected: select.asSignal(),
-                                  usersUseCase: usecaseMock)
+        let viewModel = ViewModel(usersUseCase: usecaseMock)
         viewModel.outputs.selectedUser
             .emit(to: selectedUser).disposed(by: disposeBag)
         
         scheduler.scheduleAt(5) {
-            select.accept(IndexPath(item: 0, section: 0))
+            viewModel.inputs.select(indexPath: IndexPath(item: 0, section: 0))
         }
         scheduler.scheduleAt(10, action: viewModel.inputs.viewDidLoad)
         scheduler.scheduleAt(20) {
-            select.accept(IndexPath(item: 0, section: 0))
+            viewModel.inputs.select(indexPath: IndexPath(item: 0, section: 0))
         }
         scheduler.start()
         

@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ViewModel(itemSelected: tableView.rx.itemSelected.asSignal())
+        viewModel = ViewModel()
         viewModel
             .outputs
             .users
@@ -31,6 +31,13 @@ class ViewController: UIViewController {
             .selectedUser
             .emit(onNext: { (user) in
                 print(user)
+            })
+            .disposed(by: disposeBag)
+        
+        tableView.rx
+            .itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                self?.viewModel.inputs.select(indexPath: indexPath)
             })
             .disposed(by: disposeBag)
     }

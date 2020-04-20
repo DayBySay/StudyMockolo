@@ -17,6 +17,7 @@ protocol ViewModelType {
 }
 
 protocol ViewModelInputs {
+    func select(indexPath: IndexPath)
     func viewDidLoad()
 }
 
@@ -28,6 +29,7 @@ protocol ViewModelOutputs {
 class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
     private let usersUseCase: UsersUseCase
     private let fetchUsers = PublishRelay<()>()
+    private let selectUser = PublishRelay<IndexPath>()
     
     var inputs: ViewModelInputs { return self }
     var outputs: ViewModelOutputs { return self }
@@ -35,15 +37,14 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
     var users: Driver<[User]>
     var selectedUser: Signal<User>
     
-    init(itemSelected: Signal<IndexPath>,
-         usersUseCase: UsersUseCase = DefaultUsersUseCase()) {
+    init(usersUseCase: UsersUseCase = DefaultUsersUseCase()) {
         self.usersUseCase = usersUseCase
         users = fetchUsers
             .flatMapLatest({ (_) in
                 return usersUseCase.fetchUsers().asSignal(onErrorSignalWith: Signal.empty())
             }).asDriver(onErrorDriveWith: Driver.empty())
         
-        selectedUser = itemSelected
+        selectedUser = selectUser.asSignal()
             .withLatestFrom(users.asSignal(onErrorSignalWith: Signal.empty()), resultSelector: { (indexPath, users) in
                 return users[indexPath.row]
             })
@@ -51,5 +52,9 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
     
     func viewDidLoad() {
         fetchUsers.accept(())
+    }
+    
+    func select(indexPath: IndexPath) {
+        selectUser.accept(indexPath)
     }
 }

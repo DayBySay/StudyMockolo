@@ -60,15 +60,5 @@ class UserRepositoryMock: UserRepository {
         }
         return Observable<[User]>.empty()
     }
-
-    var fetchUserCallCount = 0
-    var fetchUserHandler: ((String) -> (Observable<User>))?
-    func fetchUser(identifier: String) -> Observable<User> {
-        fetchUserCallCount += 1
-        if let fetchUserHandler = fetchUserHandler {
-            return fetchUserHandler(identifier)
-        }
-        return Observable<User>.empty()
-    }
 }
 
