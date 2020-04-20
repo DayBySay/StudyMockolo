@@ -13,6 +13,7 @@
 		19C231C3244D35FC00758996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C1244D35FC00758996 /* Main.storyboard */; };
 		19C231C5244D35FE00758996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C4244D35FE00758996 /* Assets.xcassets */; };
 		19C231C8244D35FE00758996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C6244D35FE00758996 /* LaunchScreen.storyboard */; };
+		D9DF4E4FE30A1535073481AC /* Pods_StudyMockolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4095F291D80CD197712EA5B4 /* Pods_StudyMockolo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		19C231C4244D35FE00758996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19C231C7244D35FE00758996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19C231C9244D35FE00758996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4095F291D80CD197712EA5B4 /* Pods_StudyMockolo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMockolo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66B254C7F64F48292E4B0DCB /* Pods-StudyMockolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMockolo.release.xcconfig"; path = "Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo.release.xcconfig"; sourceTree = "<group>"; };
+		B3C346351847B7A17D5F5CBF /* Pods-StudyMockolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyMockolo.debug.xcconfig"; path = "Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DF4E4FE30A1535073481AC /* Pods_StudyMockolo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				19C231BA244D35FC00758996 /* StudyMockolo */,
 				19C231B9244D35FC00758996 /* Products */,
+				1BD4F3CF6C966D18FA39A3C4 /* Pods */,
+				EE3AAC8CF6CB84D3B908302C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = StudyMockolo;
 			sourceTree = "<group>";
 		};
+		1BD4F3CF6C966D18FA39A3C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3C346351847B7A17D5F5CBF /* Pods-StudyMockolo.debug.xcconfig */,
+				66B254C7F64F48292E4B0DCB /* Pods-StudyMockolo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE3AAC8CF6CB84D3B908302C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4095F291D80CD197712EA5B4 /* Pods_StudyMockolo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19C231CC244D35FE00758996 /* Build configuration list for PBXNativeTarget "StudyMockolo" */;
 			buildPhases = (
+				60F4240F2C94E7A6BB2D42E9 /* [CP] Check Pods Manifest.lock */,
 				19C231B4244D35FC00758996 /* Sources */,
 				19C231B5244D35FC00758996 /* Frameworks */,
 				19C231B6244D35FC00758996 /* Resources */,
+				77C33AF87DC57C110587EC0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60F4240F2C94E7A6BB2D42E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyMockolo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77C33AF87DC57C110587EC0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyMockolo/Pods-StudyMockolo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19C231B4244D35FC00758996 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		19C231CD244D35FE00758996 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3C346351847B7A17D5F5CBF /* Pods-StudyMockolo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		19C231CE244D35FE00758996 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66B254C7F64F48292E4B0DCB /* Pods-StudyMockolo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
