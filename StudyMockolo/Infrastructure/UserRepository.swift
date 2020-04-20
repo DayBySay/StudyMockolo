@@ -13,7 +13,6 @@ import RxCocoa
 /// @mockable
 protocol UserRepository {
     func fetchUsers() -> Observable<[User]>
-    func fetchUser(identifier: String) -> Observable<User>
 }
 
 class DefaultUserRepository: UserRepository {
