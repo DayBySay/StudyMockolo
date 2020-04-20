@@ -14,7 +14,6 @@
 		19C231C5244D35FE00758996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C4244D35FE00758996 /* Assets.xcassets */; };
 		19C231C8244D35FE00758996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C231C6244D35FE00758996 /* LaunchScreen.storyboard */; };
 		19C231D6244D37B100758996 /* StudyMockoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231D5244D37B100758996 /* StudyMockoloTests.swift */; };
-		19C231DE244D387C00758996 /* Hoge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231DD244D387C00758996 /* Hoge.swift */; };
 		19C231E0244D394000758996 /* OutputMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231DF244D393F00758996 /* OutputMocks.swift */; };
 		19C231E6244D3B9300758996 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231E5244D3B9300758996 /* UserRepository.swift */; };
 		19C231E8244D3BAE00758996 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231E7244D3BAE00758996 /* User.swift */; };
@@ -45,7 +44,6 @@
 		19C231D3244D37B100758996 /* StudyMockoloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyMockoloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C231D5244D37B100758996 /* StudyMockoloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMockoloTests.swift; sourceTree = "<group>"; };
 		19C231D7244D37B100758996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19C231DD244D387C00758996 /* Hoge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hoge.swift; sourceTree = "<group>"; };
 		19C231DF244D393F00758996 /* OutputMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputMocks.swift; sourceTree = "<group>"; };
 		19C231E5244D3B9300758996 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		19C231E7244D3BAE00758996 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -99,12 +97,9 @@
 		19C231BA244D35FC00758996 /* StudyMockolo */ = {
 			isa = PBXGroup;
 			children = (
-				19C231BB244D35FC00758996 /* AppDelegate.swift */,
-				19C231BD244D35FC00758996 /* SceneDelegate.swift */,
-				19C231BF244D35FC00758996 /* ViewController.swift */,
-				19C231DD244D387C00758996 /* Hoge.swift */,
-				19C231E7244D3BAE00758996 /* User.swift */,
-				19C231E5244D3B9300758996 /* UserRepository.swift */,
+				19C231E9244D415B00758996 /* Application */,
+				19C231EB244D417200758996 /* Domain */,
+				19C231EA244D416500758996 /* Infrastructure */,
 				19C231C1244D35FC00758996 /* Main.storyboard */,
 				19C231C4244D35FE00758996 /* Assets.xcassets */,
 				19C231C6244D35FE00758996 /* LaunchScreen.storyboard */,
@@ -121,6 +116,32 @@
 				19C231D7244D37B100758996 /* Info.plist */,
 			);
 			path = StudyMockoloTests;
+			sourceTree = "<group>";
+		};
+		19C231E9244D415B00758996 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				19C231BB244D35FC00758996 /* AppDelegate.swift */,
+				19C231BD244D35FC00758996 /* SceneDelegate.swift */,
+				19C231BF244D35FC00758996 /* ViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		19C231EA244D416500758996 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				19C231E5244D3B9300758996 /* UserRepository.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		19C231EB244D417200758996 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				19C231E7244D3BAE00758996 /* User.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		1BD4F3CF6C966D18FA39A3C4 /* Pods */ = {
@@ -329,7 +350,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C231DE244D387C00758996 /* Hoge.swift in Sources */,
 				19C231C0244D35FC00758996 /* ViewController.swift in Sources */,
 				19C231E8244D3BAE00758996 /* User.swift in Sources */,
 				19C231E6244D3B9300758996 /* UserRepository.swift in Sources */,
