@@ -12,81 +12,53 @@ import RxSwift
 
 class ViewModelTypeMock: ViewModelType {
     init() { }
-    init(users: Driver<[User]>, selectedUser: Signal<User>) {
-        self._users = users
-        self._selectedUser = selectedUser
+    init(inputs: ViewModelInputs, outputs: ViewModelOutputs) {
+        self._inputs = inputs
+        self._outputs = outputs
     }
 
-    var usersSetCallCount = 0
-    private var _users: Driver<[User]>!  { didSet { usersSetCallCount += 1 } }
-    var users: Driver<[User]> {
-        get { return _users }
-        set { _users = newValue }
+    var inputsSetCallCount = 0
+    private var _inputs: ViewModelInputs!  { didSet { inputsSetCallCount += 1 } }
+    var inputs: ViewModelInputs {
+        get { return _inputs }
+        set { _inputs = newValue }
     }
 
-    var selectedUserSetCallCount = 0
-    private var _selectedUser: Signal<User>!  { didSet { selectedUserSetCallCount += 1 } }
-    var selectedUser: Signal<User> {
-        get { return _selectedUser }
-        set { _selectedUser = newValue }
-    }
-
-    var viewDidLoadCallCount = 0
-    var viewDidLoadHandler: (() -> ())?
-    func viewDidLoad()  {
-        viewDidLoadCallCount += 1
-        if let viewDidLoadHandler = viewDidLoadHandler {
-            viewDidLoadHandler()
-        }
-        
+    var outputsSetCallCount = 0
+    private var _outputs: ViewModelOutputs!  { didSet { outputsSetCallCount += 1 } }
+    var outputs: ViewModelOutputs {
+        get { return _outputs }
+        set { _outputs = newValue }
     }
 }
 
 class UsersUseCaseMock: UsersUseCase {
     init() { }
-    init(users: Driver<[User]>) {
-        self._users = users
-    }
 
-    var usersSetCallCount = 0
-    private var _users: Driver<[User]>!  { didSet { usersSetCallCount += 1 } }
-    var users: Driver<[User]> {
-        get { return _users }
-        set { _users = newValue }
-    }
 
     var fetchUsersCallCount = 0
-    var fetchUsersHandler: (() -> ())?
-    func fetchUsers()  {
+    var fetchUsersHandler: (() -> (Observable<[User]>))?
+    func fetchUsers() -> Observable<[User]> {
         fetchUsersCallCount += 1
         if let fetchUsersHandler = fetchUsersHandler {
-            fetchUsersHandler()
+            return fetchUsersHandler()
         }
-        
+        return Observable<[User]>.empty()
     }
 }
 
 class UserRepositoryMock: UserRepository {
     init() { }
-    init(users: Driver<[User]>) {
-        self._users = users
-    }
 
-    var usersSetCallCount = 0
-    private var _users: Driver<[User]>!  { didSet { usersSetCallCount += 1 } }
-    var users: Driver<[User]> {
-        get { return _users }
-        set { _users = newValue }
-    }
 
     var fetchUsersCallCount = 0
-    var fetchUsersHandler: (() -> ())?
-    func fetchUsers()  {
+    var fetchUsersHandler: (() -> (Observable<[User]>))?
+    func fetchUsers() -> Observable<[User]> {
         fetchUsersCallCount += 1
         if let fetchUsersHandler = fetchUsersHandler {
-            fetchUsersHandler()
+            return fetchUsersHandler()
         }
-        
+        return Observable<[User]>.empty()
     }
 
     var fetchUserCallCount = 0

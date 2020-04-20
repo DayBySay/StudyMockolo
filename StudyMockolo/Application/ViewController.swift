@@ -12,26 +12,32 @@ import RxCocoa
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    private var viewModel: ViewModel!
+    private var viewModel: ViewModelType!
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ViewModel(selectedItem: tableView.rx.itemSelected)
-        viewModel.viewDidLoad()
-        
         viewModel
+            .outputs
             .users
             .drive(tableView.rx.items(cellIdentifier: "Cell")) { row, element, cell in
                 cell.textLabel?.text = element.identifier
-        }
-        .disposed(by: disposeBag)
-        
+            }
+            .disposed(by: disposeBag)
+
         viewModel
+            .outputs
             .selectedUser
             .emit(onNext: { (user) in
                 print(user)
             })
             .disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.inputs.viewDidLoad()
+        
     }
 }

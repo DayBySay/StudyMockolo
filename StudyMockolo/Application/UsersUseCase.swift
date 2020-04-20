@@ -12,21 +12,17 @@ import RxCocoa
 
 /// @mockable
 protocol UsersUseCase {
-    var users: Driver<[User]> { get }
-    func fetchUsers()
+    func fetchUsers() -> Observable<[User]>
 }
 
 class DefaultUsersUseCase: UsersUseCase {
     private let userRepository: UserRepository
-    var users: Driver<[User]> {
-        return userRepository.users
-    }
     
     init(userRepository: UserRepository = DefaultUserRepository()) {
         self.userRepository = userRepository
     }
     
-    func fetchUsers() {
-        userRepository.fetchUsers()
+    func fetchUsers() -> Observable<[User]> {
+        return userRepository.fetchUsers()
     }
 }
