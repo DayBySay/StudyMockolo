@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19C18C5F244D93D6002160AF /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C18C5E244D93D6002160AF /* UsersUseCase.swift */; };
+		19C18C61244D943C002160AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C18C60244D943C002160AF /* ViewModel.swift */; };
 		19C231BC244D35FC00758996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231BB244D35FC00758996 /* AppDelegate.swift */; };
 		19C231BE244D35FC00758996 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231BD244D35FC00758996 /* SceneDelegate.swift */; };
 		19C231C0244D35FC00758996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C231BF244D35FC00758996 /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		0D0B61EE04AA716085247280 /* Pods_StudyMockoloTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyMockoloTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C18C5E244D93D6002160AF /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
+		19C18C60244D943C002160AF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		19C231B8244D35FC00758996 /* StudyMockolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyMockolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C231BB244D35FC00758996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C231BD244D35FC00758996 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				19C231BB244D35FC00758996 /* AppDelegate.swift */,
 				19C231BD244D35FC00758996 /* SceneDelegate.swift */,
 				19C231BF244D35FC00758996 /* ViewController.swift */,
+				19C18C5E244D93D6002160AF /* UsersUseCase.swift */,
+				19C18C60244D943C002160AF /* ViewModel.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -354,7 +360,9 @@
 				19C231E8244D3BAE00758996 /* User.swift in Sources */,
 				19C231E6244D3B9300758996 /* UserRepository.swift in Sources */,
 				19C231BC244D35FC00758996 /* AppDelegate.swift in Sources */,
+				19C18C5F244D93D6002160AF /* UsersUseCase.swift in Sources */,
 				19C231BE244D35FC00758996 /* SceneDelegate.swift in Sources */,
+				19C18C61244D943C002160AF /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
