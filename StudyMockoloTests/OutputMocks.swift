@@ -62,3 +62,102 @@ class UserRepositoryMock: UserRepository {
     }
 }
 
+class AssociatedTypeTestMock: AssociatedTypeTest {
+    init() { }
+
+    typealias T = Any
+    typealias U = Any
+
+    var nyanCallCount = 0
+    var nyanHandler: ((T) -> (U))?
+    func nyan(h: T) -> U {
+        nyanCallCount += 1
+        if let nyanHandler = nyanHandler {
+            return nyanHandler(h)
+        }
+        fatalError("nyanHandler returns can't have a default value thus its handler must be set")
+    }
+}
+
+class AssociatedTypeSpecifyTestMock: AssociatedTypeSpecifyTest {
+    init() { }
+
+    typealias T = String
+    typealias U = Nyassu
+
+    var nyanCallCount = 0
+    var nyanHandler: ((T) -> (U))?
+    func nyan(h: T) -> U {
+        nyanCallCount += 1
+        if let nyanHandler = nyanHandler {
+            return nyanHandler(h)
+        }
+        fatalError("nyanHandler returns can't have a default value thus its handler must be set")
+    }
+}
+
+class RxObservablesTestMock: RxObservablesTest {
+    init() { }
+    init(observable: Observable<String> = PublishSubject<String>(), driver: Driver<Int>, signal: Signal<Nyassu>, driver2: Observable<Int> = PublishSubject<Int>(), signal2: Observable<Nyassu> = PublishSubject<Nyassu>()) {
+        self.observable = observable
+        self._driver = driver
+        self._signal = signal
+        self.driver2 = driver2
+        self.signal2 = signal2
+    }
+
+    var observableSubjectSetCallCount = 0
+    var _observable: Observable<String>? { didSet { observableSubjectSetCallCount += 1 } }
+    var observableSubject = PublishSubject<String>() { didSet { observableSubjectSetCallCount += 1 } }
+    var observable: Observable<String> {
+        get { return _observable ?? observableSubject }
+        set { if let val = newValue as? PublishSubject<String> { observableSubject = val } else { _observable = newValue } }
+    }
+
+    var driverSetCallCount = 0
+    private var _driver: Driver<Int>!  { didSet { driverSetCallCount += 1 } }
+    var driver: Driver<Int> {
+        get { return _driver }
+        set { _driver = newValue }
+    }
+
+    var signalSetCallCount = 0
+    private var _signal: Signal<Nyassu>!  { didSet { signalSetCallCount += 1 } }
+    var signal: Signal<Nyassu> {
+        get { return _signal }
+        set { _signal = newValue }
+    }
+
+    var driver2SubjectSetCallCount = 0
+    var _driver2: Observable<Int>? { didSet { driver2SubjectSetCallCount += 1 } }
+    var driver2Subject = PublishSubject<Int>() { didSet { driver2SubjectSetCallCount += 1 } }
+    var driver2: Observable<Int> {
+        get { return _driver2 ?? driver2Subject }
+        set { if let val = newValue as? PublishSubject<Int> { driver2Subject = val } else { _driver2 = newValue } }
+    }
+
+    var signal2SubjectSetCallCount = 0
+    var _signal2: Observable<Nyassu>? { didSet { signal2SubjectSetCallCount += 1 } }
+    var signal2Subject = PublishSubject<Nyassu>() { didSet { signal2SubjectSetCallCount += 1 } }
+    var signal2: Observable<Nyassu> {
+        get { return _signal2 ?? signal2Subject }
+        set { if let val = newValue as? PublishSubject<Nyassu> { signal2Subject = val } else { _signal2 = newValue } }
+    }
+}
+
+class MultiArgTypesMock: MultiArgTypes {
+    init() { }
+    init(observable: Observable<T> = ReplaySubject<T>.create(bufferSize: 1)) {
+        self.observable = observable
+    }
+    typealias T = Int
+
+    var observableSubjectSetCallCount = 0
+    var _observable: Observable<T>? { didSet { observableSubjectSetCallCount += 1 } }
+    var observableSubject = ReplaySubject<T>.create(bufferSize: 1) { didSet { observableSubjectSetCallCount += 1 } }
+    var observable: Observable<T> {
+        get { return _observable ?? observableSubject }
+        set { if let val = newValue as? ReplaySubject<T> { observableSubject = val } else { _observable = newValue } }
+    }
+}
+
